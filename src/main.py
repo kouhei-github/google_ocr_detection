@@ -27,6 +27,9 @@ def lambda_handler(event, context) -> Dict[str, str]:
     # Google Documentの内容を取得します。ここでは先ほどアップロードしたファイルのIDを使用します。
     document_text = document_facade.get_contents(file_id)
 
+    # PDFを文字化した、文字列を表示させる
+    print(document_text)
+
     # NagamatsuDeepLearningインスタンスを作成
     # 引数にはドキュメントのテキストが含まれています
     deep_docs = NagamatsuDeepLearning(document_text)
